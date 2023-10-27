@@ -1,9 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -14,3 +15,48 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  font-display: swap;
+  src: url("../public/assets/fonts/Montserrat-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  font-display: swap;
+  src: url("../public/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  font-display: swap;
+  src: url("../public/assets/fonts/Montserrat-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat-semiBoldItalic";
+  font-display: swap;
+  src: url("../public/assets/fonts/Montserrat-SemiBoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat-ExtraBoldItalic";
+  font-display: swap;
+  src: url("../public/assets/fonts/Montserrat-ExtraBoldItalic.ttf") format("truetype");
+}
+
+.monsterrat-medium {
+  font-family: "Montserrat-Medium" !important;
+}
+.monsterrat-semibold {
+  font-family: "Montserrat-Semibold" !important;
+}
+.monsterrat-bold {
+  font-family: "Montserrat-Bold" !important;
+}
+
+.monsterrat-semibolditallic {
+  font-family: "Montserrat-Semibolditallic" !important;
+}
+
+.monsterrat-extrabolditallic {
+  font-family: "Montserrat-Extrabolditallic" !important;
+}
+
