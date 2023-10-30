@@ -17,6 +17,11 @@ a {
 }
 
 @font-face {
+  font-family: "Montserrat-Regular";
+  font-display: swap;
+  src: url("../public/assets/fonts/Montserrat-Regular.ttf") format("truetype");
+}
+@font-face {
   font-family: "Montserrat-Medium";
   font-display: swap;
   src: url("../public/assets/fonts/Montserrat-Medium.ttf") format("truetype");
@@ -42,6 +47,9 @@ a {
   src: url("../public/assets/fonts/Montserrat-ExtraBoldItalic.ttf") format("truetype");
 }
 
+.monsterrat-regular {
+  font-family: "Montserrat-Regular" !important;
+}
 .monsterrat-medium {
   font-family: "Montserrat-Medium" !important;
 }

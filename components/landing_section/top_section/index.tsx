@@ -14,7 +14,7 @@ const TopSection: React.FC<TopSectionProps> = (props) => {
             <div className="montserrat-semiBold text-5xl md:text-xl lg:text-6xl pb-6 lg:pb-10">
               For your brand.
             </div>
-            <div className="montserrat-semiBold text-base pb-1">
+            <div className="montserrat-semiBold text-base lg:text-lg pb-1">
               Begin with us
             </div>
             <div className="montserrat-medium leading-5 pr-16 lg:w-1/2" style={{fontSize: '12px'}}>

@@ -3,10 +3,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { Collapse, Drawer } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { useRouter } from "next/router";
 
-interface NavbarProps {}
+interface NavbarProps { }
 const Navbar: React.FC<NavbarProps> = (props) => {
-  const {} = props;
+  const { } = props;
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenProducts, setIsOpenProducts] = useState(false);
 
@@ -18,9 +20,17 @@ const Navbar: React.FC<NavbarProps> = (props) => {
     setIsOpenProducts(!isOpenProducts);
   };
 
+  const routerFunction = (value: string) => {
+    if (value == "home") {
+      router.push("/");
+    } else if (value == "contact") {
+        router.push("/contact");
+      }
+  }
+
   return (
     <div className=" bg-transparent text-black py-4">
-      <div className="container mx-auto flex justify-center items-center px-8 md:p-0">
+      <div className="container mx-auto flex justify-center items-center px-8 lg:p-0">
         <div className="md:hidden">
           <div
             className=""
@@ -32,14 +42,14 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           </div>
         </div>
         <div className="flex-1">
-          <img src="assets/images/svg/rang_logo.svg" alt="" className="w-28" />
+          <img src="assets/images/svg/rang_logo.svg" alt="" className="w-28" onClick={() => { routerFunction("home") }}/>
         </div>
-        <div className="md:hidden montserrat-medium px-3 py-1 text-xs rounded-md text-white bg-[#DE291B] border-b-2 border-transparent">
+        <div className="md:hidden montserrat-medium px-3 py-1 text-xs rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
           Contact us
         </div>
 
         <div className=" hidden md:flex gap-6 cursor-pointer text-base items-center">
-          <div className="montserrat-medium opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-[#DE291B]">
+          <div className="montserrat-medium opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-[#DE291B]" onClick={() => { routerFunction("home") }}>
             Home
           </div>
           <div className="montserrat-medium opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-[#DE291B]">
@@ -51,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           <div className="montserrat-medium opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-[#DE291B]">
             FAQ’s
           </div>
-          <div className="montserrat-medium px-6 py-1 rounded-md text-white bg-[#DE291B] border-b-2 border-transparent">
+          <div className="montserrat-medium px-6 py-1 rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
             Contact us
           </div>
         </div>
@@ -87,7 +97,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
             About us
           </div>
           <hr />
-          <div className="py-2 px-4 montserrat-semiBold text-sm hover:bg-[#FFEFF0]" onClick={()=>{toggleProduct()}}>
+          <div className="py-2 px-4 montserrat-semiBold text-sm hover:bg-[#FFEFF0]" onClick={() => { toggleProduct() }}>
             <div className="flex">
               <div className="flex-1">Products</div>
               <div className="">
@@ -95,7 +105,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
               </div>
             </div>
           </div>
-          {isOpenProducts ? <hr /> :<></>}
+          {isOpenProducts ? <hr /> : <></>}
           <Collapse in={isOpenProducts}>
             <div className="px-4">
               <div className="py-2 montserrat-semiBold text-sm">
