@@ -48,9 +48,9 @@ const UniqueSection: React.FC<UniqueSectionProps> = (props) => {
     <div className="container mx-auto py-12 px-4 ">
       <TitleSection title={"What Makes Us Unique"} color={"white"} />
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-8">
-        {uniqueData.map((each) => {
+        {uniqueData.map((each,index) => {
           return (
-            <div className="px-4 lg:px-8 py-4 lg:py-6 bg-black text-white rounded-md">
+            <div key={index} className="px-4 lg:px-8 py-4 lg:py-6 bg-black text-white rounded-md">
               <div className="bg-white rounded-full w-8 h-8 lg:w-14 lg:h-14 flex justify-center items-center mb-2">
                 <img src={each.src} alt="" className="w-4 h-4 lg:w-8 lg:h-8" />
               </div>

@@ -25,11 +25,11 @@ const FaqSection: React.FC<FaqSectionProps> = (props) => {
             <div className="container mx-auto">
                 <div className="px-4 lg:p-0">
                     <div className="pb-6">
-                    <TitleSection title={"FAQ"} color={"white"} />
+                        <TitleSection title={"FAQ"} color={"white"} />
                     </div>
                     <div className="text-white flex flex-wrap border-b-2">
                         {faqData.map((each, index) => {
-                            return <div className="py-4 border-t-2" onClick={() => {
+                            return <div key={each.id} className="py-4 border-t-2" onClick={() => {
                                 setCollapseValue(index)
                             }}>
                                 <div className="pb-2 flex">
@@ -38,7 +38,7 @@ const FaqSection: React.FC<FaqSectionProps> = (props) => {
                                     </div>
                                     {index == selectedIndex ? <RemoveIcon /> : <AddIcon />}
                                 </div>
-                                <Collapse in={index == selectedIndex}>
+                                <Collapse in={index == selectedIndex} key={each.id}>
                                     <div className="monsterrat-regular text-sm bg-gray-400 p-4">
                                         {each.answer}
                                     </div>
