@@ -18,7 +18,7 @@ const ClientSection: React.FC<ClientSectionProps> = (props) => {
             <div className="py-8">
                 <TitleSection title={"Our clients"} color={"black"} />
                 <div className="montserrat-medium text-lg md:text-2xl py-6">
-                    We manufacture clothing for various brands <span className="montserrat-bold text-[#DE291B] text-xl lg:text-3xl">across continents.</span> <br />  We export <span className="montserrat-bold text-[#DE291B] text-xl lg:text-3xl">all clothing categories.</span>
+                    We manufacture clothing for various brands <span className="monsterrat-bold text-[#DE291B] text-xl lg:text-3xl">across continents.</span> <br />  We export <span className="monsterrat-bold text-[#DE291B] text-xl lg:text-3xl">all clothing categories.</span>
                 </div>
                 <div className="grid grid-cols-2 gap-4 md:gap-8 md:grid-cols-4">
                     {client.map((each)=>{

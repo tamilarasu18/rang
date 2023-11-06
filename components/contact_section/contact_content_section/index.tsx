@@ -16,7 +16,6 @@ const ContactContentSection: React.FC<ContactContentSectionProps> = (props) => {
     "Housekeeping Uniforms",
   ];
   const setMatchSettingsName = (value: string) => {
-    console.log("value", value);
   };
   return (
     <div className="">

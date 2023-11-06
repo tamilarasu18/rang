@@ -54,7 +54,7 @@ const UniqueSection: React.FC<UniqueSectionProps> = (props) => {
               <div className="bg-white rounded-full w-8 h-8 lg:w-14 lg:h-14 flex justify-center items-center mb-2">
                 <img src={each.src} alt="" className="w-4 h-4 lg:w-8 lg:h-8" />
               </div>
-              <div className="montserrat-bold text-base lg:text-2xl mb-1">{each.title}</div>
+              <div className="monsterrat-bold text-base lg:text-2xl mb-1">{each.title}</div>
               <div className="montserrat-medium text-[10px] lg:text-xs">{each.content}</div>
             </div>
           );

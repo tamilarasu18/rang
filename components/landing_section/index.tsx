@@ -11,7 +11,7 @@ interface LandingPageProps {}
 const LandingPage: React.FC<LandingPageProps> = (props) => {
   return (
     <div className="">
-     <Navbar/>
+     <Navbar isAdmin={false}/>
      <TopSection/>
      <UniqueSection/>
      <OurProduct/>

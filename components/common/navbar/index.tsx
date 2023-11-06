@@ -5,9 +5,11 @@ import { Collapse, Drawer } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useRouter } from "next/router";
 
-interface NavbarProps { }
+interface NavbarProps {
+  isAdmin: boolean
+ }
 const Navbar: React.FC<NavbarProps> = (props) => {
-  const { } = props;
+  const { isAdmin} = props;
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenProducts, setIsOpenProducts] = useState(false);
@@ -29,9 +31,9 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   }
 
   return (
-    <div className=" bg-transparent text-black py-4">
+    <div className=" bg-transparent text-black py-4 shadow-md z-50">
       <div className="container mx-auto flex justify-center items-center px-8 lg:p-0">
-        <div className="md:hidden">
+        {!isAdmin ? <div className="md:hidden">
           <div
             className=""
             onClick={() => {
@@ -40,15 +42,15 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           >
             <MenuIcon />
           </div>
-        </div>
+        </div> : <></>}
         <div className="flex-1">
           <img src="assets/images/svg/rang_logo.svg" alt="" className="w-28" onClick={() => { routerFunction("home") }}/>
         </div>
-        <div className="md:hidden montserrat-medium px-3 py-1 text-xs rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
+        {!isAdmin ?<div className="md:hidden montserrat-medium px-3 py-1 text-xs rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
           Contact us
-        </div>
+        </div> : <></>}
 
-        <div className=" hidden md:flex gap-6 cursor-pointer text-base items-center">
+        {!isAdmin ? <div className=" hidden md:flex gap-6 cursor-pointer text-base items-center">
           <div className="montserrat-medium opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-[#DE291B]" onClick={() => { routerFunction("home") }}>
             Home
           </div>
@@ -64,7 +66,9 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           <div className="montserrat-medium px-6 py-1 rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
             Contact us
           </div>
-        </div>
+        </div> : <div className="text-[#DE291B] monsterrat-semibold text-lg">
+        Logout
+        </div> }
       </div>
 
       <Drawer

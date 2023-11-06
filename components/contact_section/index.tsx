@@ -7,7 +7,7 @@ interface ContactSectionProps {}
 const ContactSection: React.FC<ContactSectionProps> = (props) => {
   return (
     <div className="">
-     <Navbar/>
+     <Navbar isAdmin={false}/>
      <ContactContentSection/>
      <FooterSection/>
     </div>
