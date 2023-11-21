@@ -11,12 +11,20 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = (props) => {
   const { isAdmin} = props;
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
-  const [isOpenProducts, setIsOpenProducts] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [selectedTab, setSelectedTab] = useState<string>("home");
+  const [isOpenProducts, setIsOpenProducts] = useState<boolean>(false);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+
+  const onSelectedTabClick = (value: string) => {
+    if (value == "home") {
+      routerFunction("home")
+    } 
+    setSelectedTab(value)
+  }
 
   const toggleProduct = () => {
     setIsOpenProducts(!isOpenProducts);
@@ -26,9 +34,12 @@ const Navbar: React.FC<NavbarProps> = (props) => {
     if (value == "home") {
       router.push("/");
     } else if (value == "contact") {
-        router.push("/contact");
-      }
+      router.push("/contact");
+    }
   }
+
+  console.log("selectedTab", selectedTab);
+
 
   return (
     <div className=" bg-transparent text-black py-4 shadow-md z-50">
@@ -44,31 +55,31 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           </div>
         </div> : <></>}
         <div className="flex-1">
-          <img src="assets/images/svg/rang_logo.svg" alt="" className="w-28" onClick={() => { routerFunction("home") }}/>
+          <img src="assets/images/png/rang_logo.png" alt="" className="w-32" onClick={() => { routerFunction("home") }} />
         </div>
         {!isAdmin ?<div className="md:hidden montserrat-medium px-3 py-1 text-xs rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
           Contact us
         </div> : <></>}
 
-        {!isAdmin ? <div className=" hidden md:flex gap-6 cursor-pointer text-base items-center">
-          <div className="montserrat-medium opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-[#DE291B]" onClick={() => { routerFunction("home") }}>
+        <div className=" hidden md:flex gap-7 cursor-pointer text-lg items-center">
+          <div className={`border-b-2  ${selectedTab == "home" ? "montserrat-bold border-[#DE291B] opacity-100" : "montserrat-medium border-transparent opacity-60"} `} onClick={() => { onSelectedTabClick("home") }}>
             Home
           </div>
-          <div className="montserrat-medium opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-[#DE291B]">
+          <div className={`border-b-2 ${selectedTab == "about" ? "montserrat-bold border-[#DE291B] opacity-100" : "montserrat-medium border-transparent opacity-60"}`} onClick={() => { onSelectedTabClick("about") }}>
             About us
           </div>
-          <div className="montserrat-medium opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-[#DE291B]">
+          <div className={`border-b-2 ${selectedTab == "products" ? "montserrat-bold border-[#DE291B] opacity-100" : "montserrat-medium border-transparent opacity-60"}`} onClick={() => { onSelectedTabClick("products") }}>
             Products
           </div>
-          <div className="montserrat-medium opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-[#DE291B]">
+          <div className={`border-b-2 ${selectedTab == "faq" ? "montserrat-bold border-[#DE291B] opacity-100" : "montserrat-medium border-transparent opacity-60"}`} onClick={() => { onSelectedTabClick("faq") }}>
             FAQ’s
           </div>
-          <div className="montserrat-medium px-6 py-1 rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
+          <div className="montserrat-medium px-8 py-1 rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
             Contact us
           </div>
         </div> : <div className="text-[#DE291B] monsterrat-semibold text-lg">
         Logout
-        </div> }
+        </div> 
       </div>
 
       <Drawer
@@ -113,34 +124,34 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           <Collapse in={isOpenProducts}>
             <div className="px-4">
               <div className="py-2 montserrat-semiBold text-sm">
-                Men’s Clothings
+                {`Men’s Clothings`}
               </div>
               <hr />
               <div className="py-2 montserrat-semiBold text-sm">
-                Woman’s Clothings
+                {`Woman’s Clothings`}
               </div>
               <hr />
               <div className="py-2 montserrat-semiBold text-sm">
-                Kids’s Clothings
+                {`Kids’s Clothings`}
               </div>
               <hr />
               <div className="py-2 montserrat-semiBold text-sm">
-                Corporate T-Shirts
+                {`Corporate T-Shirts`}
               </div>
               <hr />
               <div className="py-2 montserrat-semiBold text-sm">
-                School Uniforms
+                {`School Uniforms`}
               </div>
               <hr />
               <div className="py-2 montserrat-semiBold text-sm">
-                Sportswears
+                {`Sportswears`}
               </div>
               <hr />
             </div>
           </Collapse>
           <hr />
           <div className="py-2 px-4 montserrat-semiBold text-sm hover:bg-[#FFEFF0]">
-            FAQ’s
+            {`FAQ’s`}
           </div>
           <hr />
         </div>
