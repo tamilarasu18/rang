@@ -7,9 +7,9 @@ import { useRouter } from "next/router";
 
 interface NavbarProps {
   isAdmin: boolean
- }
+}
 const Navbar: React.FC<NavbarProps> = (props) => {
-  const { isAdmin} = props;
+  const { isAdmin } = props;
   const router = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selectedTab, setSelectedTab] = useState<string>("home");
@@ -22,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   const onSelectedTabClick = (value: string) => {
     if (value == "home") {
       routerFunction("home")
-    } 
+    }
     setSelectedTab(value)
   }
 
@@ -57,11 +57,11 @@ const Navbar: React.FC<NavbarProps> = (props) => {
         <div className="flex-1">
           <img src="assets/images/png/rang_logo.png" alt="" className="w-32" onClick={() => { routerFunction("home") }} />
         </div>
-        {!isAdmin ?<div className="md:hidden montserrat-medium px-3 py-1 text-xs rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
+        {!isAdmin ? <div className="md:hidden montserrat-medium px-3 py-1 text-xs rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
           Contact us
         </div> : <></>}
 
-        <div className=" hidden md:flex gap-7 cursor-pointer text-lg items-center">
+      {!isAdmin ?  <div className=" hidden md:flex gap-7 cursor-pointer text-lg items-center">
           <div className={`border-b-2  ${selectedTab == "home" ? "montserrat-bold border-[#DE291B] opacity-100" : "montserrat-medium border-transparent opacity-60"} `} onClick={() => { onSelectedTabClick("home") }}>
             Home
           </div>
@@ -77,9 +77,10 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           <div className="montserrat-medium px-8 py-1 rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
             Contact us
           </div>
-        </div> : <div className="text-[#DE291B] monsterrat-semibold text-lg">
-        Logout
-        </div> 
+        </div> :
+        <div className="text-[#DE291B] monsterrat-semibold text-lg">
+          Logout
+        </div>}
       </div>
 
       <Drawer

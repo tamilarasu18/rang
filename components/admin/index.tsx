@@ -12,19 +12,21 @@ const AdminPage: React.FC<AdminPageProps> = (props) => {
   const [contactLog, setContactLog] = useState<Array<ContactLogModel>>([]);
 
   useEffect(() => {
-    const passwordRef = database.ref('data');
+    const firebaseData = database.ref('data');
 
-    passwordRef.on('value', (snapshot: firebase.database.DataSnapshot) => {
+    firebaseData.on('value', (snapshot: firebase.database.DataSnapshot) => {
       const data = snapshot.val();
       if (data) {
         const { password, contactLog } = data;
         setPasswordData(password);
         setContactLog(contactLog || []);
+        console.log("contactLog",contactLog);
+        
       }
     });
 
     return () => {
-      passwordRef.off();
+      firebaseData.off();
     };
   }, []);
 

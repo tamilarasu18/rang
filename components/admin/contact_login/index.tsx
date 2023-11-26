@@ -1,5 +1,5 @@
 import TextField from "@mui/material/TextField";
-import { useEffect, useRef, useState } from "react";
+import { createRef, useEffect, useRef, useState } from "react";
 
 interface ContactLoginProps {
     password: string;
@@ -9,7 +9,7 @@ const ContactLogin: React.FC<ContactLoginProps> = (props) => {
     const { password, onDoneClick } = props;
     const [enable, setEnable] = useState<boolean>(false);
     const [smsTextFields, setSmsTextFields] = useState(['', '', '', '', '', '']);
-    const textFieldsRefs = smsTextFields.map(() => useRef<null | HTMLInputElement>(null));
+    const textFieldsRefs = smsTextFields.map(() => createRef<any>());
 
     const handleSmsChange = (e: any, index: any) => {
         const updatedFields = [...smsTextFields];
@@ -45,6 +45,7 @@ const ContactLogin: React.FC<ContactLoginProps> = (props) => {
             <div className="monsterrat-bold py-4">Enter Login PIN</div>
             <div className="flex gap-4 justify-center">
                 {smsTextFields.map((smsText, index) => (
+                    <div className="bg-white" key={index}>               
                     <TextField
                         variant="outlined"
                         type="text"
@@ -55,7 +56,7 @@ const ContactLogin: React.FC<ContactLoginProps> = (props) => {
                         inputRef={textFieldsRefs[index]}
                         sx={{
                             backgroundColor: "white",
-                            width: "10%",
+                            width: "80%",
                             textAlign: "center",
                             textJustify: "center",
                             "& .MuiOutlinedInput-root": {
@@ -71,6 +72,7 @@ const ContactLogin: React.FC<ContactLoginProps> = (props) => {
                             },
                         }}
                     />
+                    </div>
                 ))}
             </div>
 

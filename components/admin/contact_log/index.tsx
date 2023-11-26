@@ -20,6 +20,8 @@ const ContactLog: React.FC<ContactLogProps> = (props) => {
     const [finalData, setFinalData] = useState<Array<ContactLogModel>>([]);
 
     useEffect(() => {
+        console.log("contactData",contactData);
+        
         if (isMobileView == null) {
             setIsMobileView(window.innerWidth <= 768);
         }
@@ -39,7 +41,7 @@ const ContactLog: React.FC<ContactLogProps> = (props) => {
         let temp: Array<ContactLogModel>;
         temp = [...adminData, ...contactData];
         setFinalData(temp);
-    }, [])
+    }, [contactData])
 
     const toggleNavbar = (value: boolean) => {
         setIsOpen(value);
