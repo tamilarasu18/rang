@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -21,26 +22,31 @@ a {
   font-display: swap;
   src: url("../public/assets/fonts/Montserrat-Regular.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "Montserrat-Medium";
   font-display: swap;
   src: url("../public/assets/fonts/Montserrat-Medium.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "Montserrat-SemiBold";
   font-display: swap;
   src: url("../public/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "Montserrat-Bold";
   font-display: swap;
   src: url("../public/assets/fonts/Montserrat-Bold.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "Montserrat-semiBoldItalic";
   font-display: swap;
   src: url("../public/assets/fonts/Montserrat-SemiBoldItalic.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "Montserrat-ExtraBoldItalic";
   font-display: swap;
@@ -50,12 +56,15 @@ a {
 .monsterrat-regular {
   font-family: "Montserrat-Regular" !important;
 }
+
 .monsterrat-medium {
   font-family: "Montserrat-Medium" !important;
 }
+
 .monsterrat-semibold {
   font-family: "Montserrat-Semibold" !important;
 }
+
 .monsterrat-bold {
   font-family: "Montserrat-Bold" !important;
 }
@@ -68,3 +77,18 @@ a {
   font-family: "Montserrat-Extrabolditallic" !important;
 }
 
+.custom-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding-right: 6rem;
+  padding-left: 6rem;
+  box-sizing: border-box;
+}
+
+/* Media query for screens smaller than 600px */
+@media (max-width: 768px) {
+  .custom-container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}

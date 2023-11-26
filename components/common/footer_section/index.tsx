@@ -22,7 +22,7 @@ const FooterSection: React.FC<FooterSectionProps> = (props) => {
 
     return (
         <div className="bg-black text-white px-4 lg:p-0">
-            <div className="container mx-auto pt-8">
+            <div className="custom-container pt-8">
                 <div className="grid grid-cols-1 gap-4 lg:gap-8 lg:grid-cols-4 pb-8">
                     <div className="">
                         <div className="flex justify-between items-start" onClick={() => { toggleFunction("address") }}>
@@ -92,17 +92,17 @@ const FooterSection: React.FC<FooterSectionProps> = (props) => {
                     <div className="monsterrat-regular">
                         <div className="monsterrat-semibold pb-4 text-sm md:text-2xl text-center lg:text-start">Social Media</div>
                         <div className="flex gap-4 justify-center items-center lg:justify-start lg:items-start">
-                            <img src="assets/images/svg/facebook.svg" alt="" />
-                            <img src="assets/images/svg/twitter.svg" alt="" />
-                            <img src="assets/images/svg/insta.svg" alt="" />
-                            <img src="assets/images/svg/youtube.svg" alt="" />
-                            <img src="assets/images/svg/linkedin.svg" alt="" />
+                            <img className="object-fill w-full h-full" src="assets/images/svg/facebook.svg" alt="" />
+                            <img className="object-fill w-full h-full" src="assets/images/svg/twitter.svg" alt="" />
+                            <img className="object-fill w-full h-full" src="assets/images/svg/insta.svg" alt="" />
+                            <img className="object-fill w-full h-full" src="assets/images/svg/youtube.svg" alt="" />
+                            <img className="object-fill w-full h-full" src="assets/images/svg/linkedin.svg" alt="" />
                         </div>
                     </div>
                 </div>
                 <hr />
                 <div className="md:flex py-8 text-center justify-center items-center">
-                    <img src="assets/images/svg/footer_logo.svg" alt="" className="w-54 pr-12 mx-auto mb-4 md:m-0" />
+                    <img src="assets/images/svg/footer_logo.svg" alt="" className="w-54 h-54 pr-12 mx-auto mb-4 md:m-0 object-fill" />
                     <div className="monsterrat-regular text-xs w-full text-center flex ">
                         <p className="mr-1">&copy;</p>
                         2023 - 2025 Rang Clothing Company. All Rights Reserved. By Kavuthamraj Designs

@@ -22,7 +22,7 @@ const FaqSection: React.FC<FaqSectionProps> = (props) => {
 
     return (
         <div className="bg-[#2E2E2E] py-8">
-            <div className="container mx-auto">
+            <div className="custom-container">
                 <div className="px-4 lg:p-0">
                     <div className="pb-6">
                         <TitleSection title={"FAQ"} color={"white"} />
@@ -39,7 +39,7 @@ const FaqSection: React.FC<FaqSectionProps> = (props) => {
                                     {index == selectedIndex ? <RemoveIcon /> : <AddIcon />}
                                 </div>
                                 <Collapse in={index == selectedIndex} key={each.id}>
-                                    <div className="monsterrat-regular text-sm bg-gray-400 p-4">
+                                    <div className="monsterrat-regular text-sm bg-gray-400 text-white p-4">
                                         {each.answer}
                                     </div>
                                 </Collapse>

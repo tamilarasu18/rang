@@ -21,7 +21,7 @@ const ContactContentSection: React.FC<ContactContentSectionProps> = (props) => {
     <div className="">
       <div className="flex">
         <div className="bg-white w-2/5 hidden lg:block">
-          <img src="assets/images/png/contact_img.png" alt="" className="w-[85%] object-fill" />
+          <img src="assets/images/webp/contact_img.webp" alt="" className="w-[85%] h-full object-fill" />
         </div>
         <div className="px-8 lg:px-0 py-4  lg:py-12 w-[100vh]">
           <div className="">

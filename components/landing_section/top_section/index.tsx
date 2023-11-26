@@ -24,7 +24,7 @@ const TopSection: React.FC<TopSectionProps> = (props) => {
             </div>
             <div className="flex items-start pt-8">
               <div className="mr-4 pt-2 border-t-[0.5px] border-white">
-                <div className="montserrat-bold md:text-lg lg:text-4xl pb-2">
+                <div className="monsterrat-bold md:text-lg lg:text-4xl pb-2">
                   200+
                 </div>
                 <div className="montserrat-semiBold md:text-xs lg:text-lg">
@@ -32,7 +32,7 @@ const TopSection: React.FC<TopSectionProps> = (props) => {
                 </div>
               </div>
               <div className="ml-4 pt-2 border-t-[0.5px] border-white">
-                <div className="montserrat-bold md:text-lg lg:text-4xl pb-2">
+                <div className="monsterrat-bold md:text-lg lg:text-4xl pb-2">
                   10yrs+
                 </div>
                 <div className="montserrat-semiBold md:text-xs lg:text-lg">
@@ -43,16 +43,16 @@ const TopSection: React.FC<TopSectionProps> = (props) => {
           </div>
         </div>
         <div className="hidden lg:block absolute right-28 bottom-28" >
-          <img src="/assets/images/png/cotton_img.png" alt="" className="w-full" />
+          <img src="/assets/images/webp/cotton_img.webp" alt="" className="w-full h-full" />
         </div>
         <img
-          src={`/assets/images/png/rang_top_bg.png`}
+          src={`/assets/images/webp/rang_top_bg.webp`}
           alt=""
-          className="hidden md:block w-full object-scale-contain"
+          className="hidden md:block w-full h-full object-scale-contain"
         />
-        <img src={`/assets/images/png/rang_top_bg_mobile.png`}
+        <img src={`/assets/images/webp/rang_top_bg_mobile.webp`}
           alt=""
-          className="md:hidden w-full h-[90vh] object-scale-contain" />
+          className="md:hidden w-full h-full object-scale-contain" />
       </div>
     </div>
   );
