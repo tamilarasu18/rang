@@ -21,6 +21,8 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   const onSelectedTabClick = (value: string) => {
     if (value == "home") {
       routerFunction("home")
+    }else if(value == "products"){
+      routerFunction("products")
     }
     setSelectedTab(value)
   }
@@ -30,6 +32,8 @@ const Navbar: React.FC<NavbarProps> = (props) => {
       router.push("/");
     } else if (value == "contact") {
       router.push("/contact");
+    } else if (value == "products") {
+      router.push("/products");
     }
   }
 
