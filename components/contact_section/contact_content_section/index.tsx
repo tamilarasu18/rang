@@ -273,7 +273,7 @@ const ContactContentSection: React.FC<ContactContentSectionProps> = (props) => {
                 }}
               />
             </div>
-            <div className="montserrat-semiBold px-6 py-4 rounded text-white bg-[#DE291B] text-base text-center w-1/2 md:w-3/12 mt-4">
+            <div className="monsterrat-semibold px-6 py-4 rounded text-white bg-[#DE291B] text-base text-center w-1/2 md:w-3/12 mt-4">
               Send message
             </div>
           </div>

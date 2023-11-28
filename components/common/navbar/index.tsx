@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           Contact us
         </div> : <></>}
 
-        {!isAdmin ? <div className=" hidden md:flex gap-7 cursor-pointer text-lg items-center">
+        {!isAdmin ? <div className=" hidden md:flex gap-9 cursor-pointer text-lg items-center">
           <div className={`border-b-2  ${selectedTab == "home" ? "monsterrat-bold border-[#DE291B] opacity-100" : "montserrat-medium border-transparent opacity-60"} `} onClick={() => { onSelectedTabClick("home") }}>
             Home
           </div>
@@ -73,7 +73,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           <div className={`border-b-2 ${selectedTab == "faq" ? "monsterrat-bold border-[#DE291B] opacity-100" : "montserrat-medium border-transparent opacity-60"}`} onClick={() => { onSelectedTabClick("faq") }}>
             FAQ’s
           </div>
-          <div className="montserrat-medium px-8 py-1 rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
+          <div className="montserrat-medium ml-4 px-8 py-1 rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
             Contact us
           </div>
         </div> :
@@ -104,19 +104,19 @@ const Navbar: React.FC<NavbarProps> = (props) => {
             <CloseIcon />
           </div>
           <hr />
-          <div className="py-4 px-6 montserrat-semiBold text-sm hover:bg-[#FFEFF0]">
+          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]">
             Home
           </div>
           <hr />
-          <div className="py-4 px-6 montserrat-semiBold text-sm hover:bg-[#FFEFF0]">
+          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]">
             About us
           </div>
           <hr />
-          <div className="py-4 px-6 montserrat-semiBold text-sm hover:bg-[#FFEFF0]">
+          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]">
             Products
           </div>
           <hr />
-          <div className="py-4 px-6 montserrat-semiBold text-sm hover:bg-[#FFEFF0]">
+          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]">
             {`FAQ’s`}
           </div>
           <hr />

@@ -20,7 +20,7 @@ const OurProduct: React.FC<OurProductProps> = (props) => {
                     <div className="flex-1 px-4">
                         <TitleSection title={"Our Product"} color={"black"} />
                     </div>
-                    <div className="hidden md:block text-[#DE291B] montserrat-semiBold text-lg">View All</div>
+                    <div className="hidden md:block text-[#DE291B] monsterrat-semibold text-lg">View All</div>
                 </div>
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
                     {productList.map((each, index) => {

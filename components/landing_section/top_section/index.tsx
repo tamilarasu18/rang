@@ -5,16 +5,16 @@ const TopSection: React.FC<TopSectionProps> = (props) => {
       <div className="relative">
         <div className="absolute inset-0 text-white">
           <div className="w-full md:w-1/2 lg:w-9/12 h-full px-6 lg:px-24 flex flex-col justify-center ">
-            <div className="montserrat-semiBold text-5xl md:text-xl lg:text-6xl pb-2 lg:pb-3">
+            <div className="monsterrat-semibold text-5xl md:text-xl lg:text-6xl pb-2 lg:pb-3">
               {`We're your one-stop`}
             </div>
             <div className="monsterrat-bold text-5xl md:text-xl lg:text-6xl text-[#FFC400] pb-2 lg:pb-3">
               Manufacturer
             </div>
-            <div className="montserrat-semiBold text-5xl md:text-xl lg:text-6xl pb-6 lg:pb-10">
+            <div className="monsterrat-semibold text-5xl md:text-xl lg:text-6xl pb-6 lg:pb-10">
               For your brand.
             </div>
-            <div className="montserrat-semiBold md:text-lg lg:text-2xl pb-1">
+            <div className="monsterrat-semibold md:text-lg lg:text-2xl pb-1">
               Begin with us
             </div>
             <div className="montserrat-medium leading-5 pr-16 lg:w-1/2 md:text-xs">
@@ -27,7 +27,7 @@ const TopSection: React.FC<TopSectionProps> = (props) => {
                 <div className="monsterrat-bold md:text-lg lg:text-4xl pb-2">
                   200+
                 </div>
-                <div className="montserrat-semiBold md:text-xs lg:text-lg">
+                <div className="monsterrat-semibold md:text-xs lg:text-lg">
                   satisfied clothingbrands globally
                 </div>
               </div>
@@ -35,7 +35,7 @@ const TopSection: React.FC<TopSectionProps> = (props) => {
                 <div className="monsterrat-bold md:text-lg lg:text-4xl pb-2">
                   10yrs+
                 </div>
-                <div className="montserrat-semiBold md:text-xs lg:text-lg">
+                <div className="monsterrat-semibold md:text-xs lg:text-lg">
                   Of quality industry experience
                 </div>
               </div>
