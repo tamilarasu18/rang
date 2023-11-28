@@ -22,11 +22,11 @@ const OurProduct: React.FC<OurProductProps> = (props) => {
                     </div>
                     <div className="hidden md:block text-[#DE291B] monsterrat-semibold text-lg">View All</div>
                 </div>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-4 ">
                     {productList.map((each, index) => {
-                        return <div key={index} className="pb-12 rounded-2xl hover:bg-[#F44336] text-black hover:text-white" style={{ boxShadow: "0px 0px 10px rgb(156,163,175,0.4)" }}>
+                        return <div key={index} className="w-full h-[80%] pb-12 rounded-2xl hover:bg-[#F44336] text-black hover:text-white" style={{ boxShadow: "0px 0px 10px rgb(156,163,175,0.4)" }}>
                             <img className="object-fill w-full h-full"  src={each.src} alt="" />
-                            <div className="monsterrat-bold text-lg  text-start px-4 mt-2">{each.name}</div>
+                            <div className="monsterrat-semibold text-lg  text-start px-4 mt-2">{each.name}</div>
                         </div>
                     })}
                 </div>
