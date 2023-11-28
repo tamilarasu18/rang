@@ -32,7 +32,7 @@ a {
 @font-face {
   font-family: "Montserrat-semibold";
   font-display: swap;
-  src: url("../public/assets/fonts/Montserrat-semibold.ttf") format("truetype");
+  src: url("../public/assets/fonts/Montserrat-Semibold.ttf") format("truetype");
 }
 
 @font-face {
@@ -44,7 +44,7 @@ a {
 @font-face {
   font-family: "Montserrat-semiboldItalic";
   font-display: swap;
-  src: url("../public/assets/fonts/Montserrat-semiboldItalic.ttf") format("truetype");
+  src: url("../public/assets/fonts/Montserrat-SemiboldItalic.ttf") format("truetype");
 }
 
 @font-face {
@@ -62,7 +62,7 @@ a {
 }
 
 .monsterrat-semibold {
-  font-family: "Montserrat-semibold" !important;
+  font-family: "Montserrat-Semibold" !important;
 }
 
 .monsterrat-bold {
@@ -70,7 +70,7 @@ a {
 }
 
 .monsterrat-semibolditallic {
-  font-family: "Montserrat-semibolditallic" !important;
+  font-family: "Montserrat-Semibolditallic" !important;
 }
 
 .monsterrat-extrabolditallic {
