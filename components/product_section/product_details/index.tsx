@@ -20,9 +20,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
             <div className="custom-container">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
                     {productImageList.map((each, index) => {
-                        return <div key={index} className="pb-12 rounded-2xl hover:bg-[#F44336] text-black hover:text-white" style={{ boxShadow: "0px 0px 10px rgb(156,163,175,0.4)" }}>
-                            <img className="object-fill w-full h-full"  src={each.src} alt="" />
-                            <div className="monsterrat-semibold text-lg  text-start px-4 mt-2">{each.name}</div>
+                        return <div key={index} className="w-full h-full rounded-2xl hover:bg-[#F44336] text-black hover:text-white" style={{ boxShadow: "0px 0px 10px rgb(156,163,175,0.4)" }}>
+                            <img className="object-fill w-full h-[84%]" src={each.src} alt="" />
+                            <div className="monsterrat-semibold text-lg py-3  text-start px-4 ">{each.name}</div>
                         </div>
                     })}
                 </div>

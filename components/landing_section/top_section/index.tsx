@@ -42,7 +42,7 @@ const TopSection: React.FC<TopSectionProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="hidden lg:block absolute right-28 bottom-28" >
+        <div className="hidden lg:block absolute right-28 bottom-8" >
           <img src="/assets/images/webp/cotton_img.webp" alt="" className="w-full h-full" />
         </div>
         <img

@@ -20,7 +20,7 @@ const ContactContentSection: React.FC<ContactContentSectionProps> = (props) => {
   return (
     <div className="">
       <div className="flex">
-        <div className="bg-white w-2/5 hidden lg:block">
+        <div className="bg-transparent w-[50%] hidden lg:block">
           <img src="assets/images/webp/contact_img.webp" alt="" className="w-[85%] h-full object-fill" />
         </div>
         <div className="px-8 lg:px-0 py-4  lg:py-12 w-[100vh]">
@@ -32,37 +32,71 @@ const ContactContentSection: React.FC<ContactContentSectionProps> = (props) => {
             <div className="monsterrat-bold text-sm">
               You are Looking for?
             </div>
-            <div className="py-6 md:w-1/2 md:pr-4">
-              <FormControl fullWidth>
-                <InputLabel id="role-lablel"><span className="text-black">Choose categorie*</span></InputLabel>
-                <Select
-                  labelId="role-lablel"
-                  label="Choose categorie*"
-                  sx={{
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      borderColor: '#969696',
-                    },
-                    '&:hover .MuiOutlinedInput-notchedOutline': {
-                      borderColor: '#969696',
-                    },
-                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                      border: "1px solid #969696",
-                    },
-                  }}
-                >
-                  {setCategorie.map(
-                    (prop, index) => {
-                      return (
-                        <MenuItem key={index} value={prop}
-                          onClick={() => { }}>
-                          {prop}
-                        </MenuItem>
-                      );
-                    }
-                  )}
-                </Select>
-              </FormControl>
+            <div className="flex">
+              <div className="py-6 md:w-1/2 md:pr-4">
+                <FormControl fullWidth>
+                  <InputLabel id="role-lablel"><span className="text-black">Type*</span></InputLabel>
+                  <Select
+                    labelId="role-lablel"
+                    label="Choose categorie*"
+                    sx={{
+                      '& .MuiOutlinedInput-notchedOutline': {
+                        borderColor: '#969696',
+                      },
+                      '&:hover .MuiOutlinedInput-notchedOutline': {
+                        borderColor: '#969696',
+                      },
+                      '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                        border: "1px solid #969696",
+                      },
+                    }}
+                  >
+                    {setCategorie.map(
+                      (prop, index) => {
+                        return (
+                          <MenuItem key={index} value={prop}
+                            onClick={() => { }}>
+                            {prop}
+                          </MenuItem>
+                        );
+                      }
+                    )}
+                  </Select>
+                </FormControl>
+              </div>
+              <div className="py-6 md:w-1/2 md:pr-4">
+                <FormControl fullWidth>
+                  <InputLabel id="role-lablel"><span className="text-black">Choose categorie*</span></InputLabel>
+                  <Select
+                    labelId="role-lablel"
+                    label="Choose categorie*"
+                    sx={{
+                      '& .MuiOutlinedInput-notchedOutline': {
+                        borderColor: '#969696',
+                      },
+                      '&:hover .MuiOutlinedInput-notchedOutline': {
+                        borderColor: '#969696',
+                      },
+                      '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                        border: "1px solid #969696",
+                      },
+                    }}
+                  >
+                    {setCategorie.map(
+                      (prop, index) => {
+                        return (
+                          <MenuItem key={index} value={prop}
+                            onClick={() => { }}>
+                            {prop}
+                          </MenuItem>
+                        );
+                      }
+                    )}
+                  </Select>
+                </FormControl>
+              </div>
             </div>
+
           </div>
           <div className="">
             <div className="monsterrat-bold text-sm">Your details</div>

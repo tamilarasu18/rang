@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { Collapse, Drawer } from "@mui/material";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { Drawer } from "@mui/material";
 import { useRouter } from "next/router";
 
 interface NavbarProps {
@@ -12,7 +11,15 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   const { isAdmin } = props;
   const router = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectedTab, setSelectedTab] = useState<string>("home");
+  const [selectedTab, setSelectedTab] = useState<string>();
+
+  useEffect(() => {
+    if (router.route != null && router.route != '/') {
+      setSelectedTab(router.route.split('/')[1]);
+    } else {
+      setSelectedTab("home");
+    }
+  }, [router])
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -21,8 +28,10 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   const onSelectedTabClick = (value: string) => {
     if (value == "home") {
       routerFunction("home")
-    }else if(value == "products"){
+    } else if (value == "products") {
       routerFunction("products")
+    } else if (value == "about") {
+      routerFunction("about")
     }
     setSelectedTab(value)
   }
@@ -34,11 +43,10 @@ const Navbar: React.FC<NavbarProps> = (props) => {
       router.push("/contact");
     } else if (value == "products") {
       router.push("/products");
+    } else if (value == "about") {
+      router.push("/about");
     }
   }
-
-  console.log("selectedTab", selectedTab);
-
 
   return (
     <div className="custom-container bg-transparent text-black py-4 shadow-md z-50">
@@ -104,19 +112,19 @@ const Navbar: React.FC<NavbarProps> = (props) => {
             <CloseIcon />
           </div>
           <hr />
-          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]">
+          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]" onClick={() => { onSelectedTabClick("home")}}>
             Home
           </div>
           <hr />
-          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]">
+          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]" onClick={() => { onSelectedTabClick("about")}}>
             About us
           </div>
           <hr />
-          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]">
+          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]" onClick={() => { onSelectedTabClick("products")}}>
             Products
           </div>
           <hr />
-          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]">
+          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]" onClick={() => { onSelectedTabClick("faq")}}>
             {`FAQ’s`}
           </div>
           <hr />

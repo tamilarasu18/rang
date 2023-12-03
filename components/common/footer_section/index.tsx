@@ -1,6 +1,7 @@
 import { Collapse } from "@mui/material";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardControlKeyIcon from '@mui/icons-material/KeyboardControlKey';
+import EmailIcon from '@mui/icons-material/Email';
 import { useState } from "react";
 
 interface FooterSectionProps {
@@ -33,13 +34,14 @@ const FooterSection: React.FC<FooterSectionProps> = (props) => {
                                 }
                             </div>
                         </div>
-                        <Collapse in={address}>
-                            <div className="monsterrat-regular text-base">Rang Clothing Company, 34/20, 5Th Crosss Street, Collage Road, Odakkadu, Tiruppur, Tamil Nadu - 641601.</div>
-                        </Collapse>
-                        <div className="hidden md:block">
-                            <div className="monsterrat-regular text-base">Rang Clothing Company, 34/20, 5Th Crosss Street, Collage Road, Odakkadu, Tiruppur, Tamil Nadu - 641601.</div>
+                        <div className="md:hidden">
+                            <Collapse in={address}>
+                                <div className="monsterrat-regular text-base">186, College Road , Soundamman Kovil Back Side, Tirupur - 641603.</div>
+                            </Collapse>
                         </div>
-
+                        <div className="hidden md:block">
+                            <div className="monsterrat-regular text-base">186, College Road , Soundamman Kovil Back Side, Tirupur - 641603.</div>
+                        </div>
                     </div>
                     <div className="monsterrat-regular">
                         <div className="flex justify-between items-start" onClick={() => { toggleFunction("product") }}>
@@ -50,13 +52,15 @@ const FooterSection: React.FC<FooterSectionProps> = (props) => {
                                 }
                             </div>
                         </div>
-                        <Collapse in={product}>
-                            <div className="pb-4 text-base">Corporate T-Shirts</div>
-                            <div className="pb-4 text-base">School Uniforms</div>
-                            <div className="pb-4 text-base">Sportswear</div>
-                            <div className="pb-4 text-base">Security Uniforms</div>
-                            <div className="pb-4 text-base">Housekeeping Uniforms</div>
-                        </Collapse>
+                        <div className="md:hidden">
+                            <Collapse in={product}>
+                                <div className="pb-4 text-base">Corporate T-Shirts</div>
+                                <div className="pb-4 text-base">School Uniforms</div>
+                                <div className="pb-4 text-base">Sportswear</div>
+                                <div className="pb-4 text-base">Security Uniforms</div>
+                                <div className="pb-4 text-base">Housekeeping Uniforms</div>
+                            </Collapse>
+                        </div>
                         <div className="hidden md:block">
                             <div className="pb-4 text-base">Corporate T-Shirts</div>
                             <div className="pb-4 text-base">School Uniforms</div>
@@ -74,13 +78,15 @@ const FooterSection: React.FC<FooterSectionProps> = (props) => {
                                 }
                             </div>
                         </div>
-                        <Collapse in={otherproduct}>
-                            <div className="pb-4 text-base">Corporate Uniforms</div>
-                            <div className="pb-4 text-base">Supermarket Uniforms</div>
-                            <div className="pb-4 text-base">Hotel Uniforms</div>
-                            <div className="pb-4 text-base">Men’s And Women’s Clothings</div>
-                            <div className="pb-4 text-base">Kids Clothings</div>
-                        </Collapse>
+                        <div className="md:hidden">
+                            <Collapse in={otherproduct}>
+                                <div className="pb-4 text-base">Corporate Uniforms</div>
+                                <div className="pb-4 text-base">Supermarket Uniforms</div>
+                                <div className="pb-4 text-base">Hotel Uniforms</div>
+                                <div className="pb-4 text-base">Men’s And Women’s Clothings</div>
+                                <div className="pb-4 text-base">Kids Clothings</div>
+                            </Collapse>
+                        </div>
                         <div className="hidden md:block">
                             <div className="pb-4 text-base">Corporate Uniforms</div>
                             <div className="pb-4 text-base">Supermarket Uniforms</div>
@@ -92,11 +98,18 @@ const FooterSection: React.FC<FooterSectionProps> = (props) => {
                     <div className="monsterrat-regular">
                         <div className="monsterrat-semibold pb-4 text-sm md:text-2xl text-center lg:text-start">Social Media</div>
                         <div className="flex gap-4 justify-center items-center lg:justify-start lg:items-start">
-                            <img className="object-fill w-full h-full" src="assets/images/svg/facebook.svg" alt="" />
-                            <img className="object-fill w-full h-full" src="assets/images/svg/twitter.svg" alt="" />
-                            <img className="object-fill w-full h-full" src="assets/images/svg/insta.svg" alt="" />
-                            <img className="object-fill w-full h-full" src="assets/images/svg/youtube.svg" alt="" />
-                            <img className="object-fill w-full h-full" src="assets/images/svg/linkedin.svg" alt="" />
+                            <img className="object-fill w-1/4 lg:w-full h-full" src="assets/images/svg/facebook.svg" alt="" />
+                            <img className="object-fill w-1/4 lg:w-full h-full" src="assets/images/svg/twitter.svg" alt="" />
+                            <img className="object-fill w-1/4 lg:w-full h-full" src="assets/images/svg/insta.svg" alt="" />
+                            <img className="object-fill w-1/4 lg:w-full h-full" src="assets/images/svg/youtube.svg" alt="" />
+                            <img className="object-fill w-1/4 lg:w-full h-full" src="assets/images/svg/linkedin.svg" alt="" />
+                        </div>
+                        <div className="">
+                        <div className="monsterrat-semibold py-4 text-sm md:text-2xl text-center lg:text-start">Contact Us</div>
+                        <div className="flex items-center">
+                            <EmailIcon fontSize="large"/>
+                            <div className="pl-4">rajeshkumarvadivel@gmail.com</div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -105,7 +118,7 @@ const FooterSection: React.FC<FooterSectionProps> = (props) => {
                     <img src="assets/images/svg/footer_logo.svg" alt="" className="w-54 h-54 pr-12 mx-auto mb-4 md:m-0 object-fill" />
                     <div className="monsterrat-regular text-xs w-full text-center flex ">
                         <p className="mr-1">&copy;</p>
-                        2023 - 2025 Rang Clothing Company. All Rights Reserved. By Kavuthamraj Designs
+                        2023 - 2025 Rang Clothing Company. All Rights Reserved.
                     </div>
                 </div>
             </div>
