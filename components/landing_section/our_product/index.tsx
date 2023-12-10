@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import TitleSection from "../../common/title_Section";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { productList } from "../../../model/product_category_model";
 
 interface OurProductProps { }
 const OurProduct: React.FC<OurProductProps> = (props) => {
@@ -10,16 +11,6 @@ const OurProduct: React.FC<OurProductProps> = (props) => {
         router.push("/products");
       };
 
-    const productList = [
-        { src: "assets/images/webp/mens.webp", name: "Men's Clothings" },
-        { src: "assets/images/webp/women.webp", name: "Women's Clothings" },
-        { src: "assets/images/webp/kids.webp", name: "Kid's Clothings" },
-        { src: "assets/images/webp/corporate.webp", name: "Corporate Clothings" },
-        { src: "assets/images/webp/school.webp", name: "School Uniforms" },
-        { src: "assets/images/webp/baby.webp", name: "Newborn Baby Clothing" },
-        { src: "assets/images/webp/sports.webp", name: "Sportswear" },
-        { src: "assets/images/webp/sports_jersey.webp", name: "Sports Jersey's" },
-    ]
     return (
         <div className="">
             <div className="custom-container py-12 ">

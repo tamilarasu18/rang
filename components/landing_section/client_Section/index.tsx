@@ -1,18 +1,10 @@
+import { client } from "../../../model/product_category_model";
 import TitleSection from "../../common/title_Section";
 
 
 interface ClientSectionProps { }
 const ClientSection: React.FC<ClientSectionProps> = (props) => {
-    const client = [
-        { id: 1, src: "assets/images/webp/client_1.webp" },
-        { id: 2, src: "assets/images/webp/client_2.webp" },
-        { id: 3, src: "assets/images/webp/client_3.webp" },
-        { id: 4, src: "assets/images/webp/client_4.webp" },
-        { id: 5, src: "assets/images/webp/client_5.webp" },
-        { id: 6, src: "assets/images/webp/client_6.webp" },
-        { id: 7, src: "assets/images/webp/client_7.webp" },
-        { id: 8, src: "assets/images/webp/client_8.webp" },
-    ]
+ 
     return (
         <div className=" px-4 lg:px-4 ">
             <div className="custom-container py-8">

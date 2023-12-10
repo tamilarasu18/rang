@@ -1,19 +1,10 @@
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useRouter } from 'next/router';
+import { goodAtPoints, ourStory } from '../../../model/product_category_model';
 
 interface AboutContentSectionProps { }
 const AboutContentSection: React.FC<AboutContentSectionProps> = (props) => {
-    const goodAtPoints = [
-        { src: "assets/images/webp/hand_pointer.webp", content: "Our Clothing Excels With Unwavering Commitment To Exceptional Craftsmanship, Delivering Garments Of Unparalleled Quality Through A Skilled, Precision-Focused Team." },
-        { src: "assets/images/webp/hand_pointer.webp", content: "Setting Ourselves Apart, We Blend Tradition With Modernity, Leveraging Cutting-Edge Technology To Lead In Fashion Production With Expertise Surpassing Industry Standards." },
-        { src: "assets/images/webp/hand_pointer.webp", content: "Beyond Crafting Garments, We Prioritize Eco-Friendly Practices, Contributing To A Greener, Responsible Future That Defines Our Commitment To Environmental" },
-    ];
-
-    const ourStory = [
-        { id: "01", title: "Craftsmanship Commitment", content: "Our story as a clothing manufacturer is defined by a dedication to meticulous craftsmanship, where each garment reflects our commitment to quality and style." },
-        { id: "02", title: "Fashion Innovation", content: "Rooted in innovation, our identity as a clothing manufacturer is marked by trendsetting designs and cutting-edge production techniques, constantly redefining industry standards." },
-        { id: "03", title: "Craftsmanship Commitment", content: "Beyond clothing, our story centers on sustainability, with a focus on eco-friendly practices from material sourcing to production, echoing our dedication to a greener future." },
-    ]
+   
 
     const router = useRouter();
     const routerFunction = () => {

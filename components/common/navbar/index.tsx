@@ -78,9 +78,6 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           <div className={`border-b-2 ${selectedTab == "products" ? "monsterrat-bold border-[#DE291B] opacity-100" : "montserrat-medium border-transparent opacity-60"}`} onClick={() => { onSelectedTabClick("products") }}>
             Products
           </div>
-          <div className={`border-b-2 ${selectedTab == "faq" ? "monsterrat-bold border-[#DE291B] opacity-100" : "montserrat-medium border-transparent opacity-60"}`} onClick={() => { onSelectedTabClick("faq") }}>
-            FAQ’s
-          </div>
           <div className="montserrat-medium ml-4 px-8 py-1 rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
             Contact us
           </div>
@@ -122,10 +119,6 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           <hr />
           <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]" onClick={() => { onSelectedTabClick("products")}}>
             Products
-          </div>
-          <hr />
-          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]" onClick={() => { onSelectedTabClick("faq")}}>
-            {`FAQ’s`}
           </div>
           <hr />
         </div>
