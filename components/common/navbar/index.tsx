@@ -15,7 +15,11 @@ const Navbar: React.FC<NavbarProps> = (props) => {
 
   useEffect(() => {
     if (router.route != null && router.route != '/') {
-      setSelectedTab(router.route.split('/')[1]);
+      if (router.route.split('/')[1] == "category") {
+        setSelectedTab("products")
+      } else {
+        setSelectedTab(router.route.split('/')[1]);
+      }
     } else {
       setSelectedTab("home");
     }
@@ -109,15 +113,15 @@ const Navbar: React.FC<NavbarProps> = (props) => {
             <CloseIcon />
           </div>
           <hr />
-          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]" onClick={() => { onSelectedTabClick("home")}}>
+          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]" onClick={() => { onSelectedTabClick("home") }}>
             Home
           </div>
           <hr />
-          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]" onClick={() => { onSelectedTabClick("about")}}>
+          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]" onClick={() => { onSelectedTabClick("about") }}>
             About us
           </div>
           <hr />
-          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]" onClick={() => { onSelectedTabClick("products")}}>
+          <div className="py-4 px-6 monsterrat-semibold text-sm hover:bg-[#FFEFF0]" onClick={() => { onSelectedTabClick("products") }}>
             Products
           </div>
           <hr />
