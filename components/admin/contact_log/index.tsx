@@ -57,12 +57,12 @@ const ContactLog: React.FC<ContactLogProps> = (props) => {
 
     const adminData: ContactLogModel[] = [
         new ContactLogModel({
-            id: 0,
+            id: "",
             name: "Name",
             mobile: "Mobile No",
             email: "Email ID",
             catergorie: "Categorie",
-            location: "City & Country",
+            country: "City & Country",
             message: "Message"
         }),
     ];
@@ -82,7 +82,7 @@ const ContactLog: React.FC<ContactLogProps> = (props) => {
                             <div className="">
                                 <div className="text-sm py-1">{each.name}</div>
                                 <div className="text-xs py-1">{each.catergorie}</div>
-                                <div className="text-xs opacity-60 py-1">{each.location}</div>
+                                <div className="text-xs opacity-60 py-1">{each.city} {each.country}</div>
                                 <div className="text-xs opacity-60 py-1">{each.mobile} | {each.email}</div>
                             </div>
                             <ArrowForwardIosIcon />
@@ -98,7 +98,7 @@ const ContactLog: React.FC<ContactLogProps> = (props) => {
                         <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-1`}>{each.mobile}</div>
                         <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-2`}>{each.email}</div>
                         <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-2`}>{each.catergorie}</div>
-                        <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-2`}>{each.location}</div>
+                        <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-2`}>{each.city}{each.country}</div>
                         <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-3 truncate w-full`}>{each.message}</div>
                         <div className={`col-span-1`}>{index != 0 ? <KeyboardArrowRightIcon /> : <></>}</div>
                     </div>

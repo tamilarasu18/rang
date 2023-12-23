@@ -1,11 +1,14 @@
 
 export class ContactLogModel {
-    id: number | null = null;
+    id: string | null = null;
     name: string | null = null;
+    lastName: string | null = null;
     mobile: string | null = null;
     email: string | null = null;
     catergorie: string | null = null;
-    location: string | null = null;
+    type: string | null = null;
+    city: string | null = null;
+    country: string | null = null;
     message: string | null = null;
     constructor(data?: Partial<ContactLogModel>) {
         if (data) {

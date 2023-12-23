@@ -15,7 +15,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
 
   useEffect(() => {
     if (router.route != null && router.route != '/') {
-      if (router.route.split('/')[1] == "category") {
+      if (router.route.split('/')[1] == "category" || router.route.split('/')[1] == "product_details" ) {
         setSelectedTab("products")
       } else {
         setSelectedTab(router.route.split('/')[1]);
@@ -68,7 +68,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
         <div className="flex-1 pl-4 md:p-0">
           <img src="assets/images/webp/rang_logo.webp" alt="" className="object-fill w-32 h-14" onClick={() => { routerFunction("home") }} />
         </div>
-        {!isAdmin ? <div className="md:hidden montserrat-medium px-3 py-1 text-xs rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
+        {!isAdmin ? <div className="md:hidden montserrat-medium px-3 py-1 text-base rounded-md text-white bg-[#DE291B] border-b-2 border-transparent" onClick={() => { routerFunction("contact") }}>
           Contact us
         </div> : <></>}
 
