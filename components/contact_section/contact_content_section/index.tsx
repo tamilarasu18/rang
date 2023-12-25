@@ -4,13 +4,14 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 import { useEffect, useState } from "react";
-import { ContactLogModel } from "../../../model/contact_log_model";
 import { firebaseDatabase } from "../../../utils/firebase";
+import { useRouter } from "next/router";
 
 
 
 interface ContactContentSectionProps { }
 const ContactContentSection: React.FC<ContactContentSectionProps> = (props) => {
+  const router = useRouter();
   const [contactDetails, setContactDetails] = useState<any>();
   const [buttonVal, setbuttonVal] = useState<boolean>(false);
   const [firebaseCount, setfirebaseCount] = useState<number>(0);
@@ -33,7 +34,7 @@ const ContactContentSection: React.FC<ContactContentSectionProps> = (props) => {
     contactDetails
   ])
 
-  const firebaseDataLength = () =>{
+  const firebaseDataLength = () => {
     const firebaseData = firebaseDatabase.ref('data/contactLog');
     firebaseData.once('value')
       .then((snapshot) => {
@@ -118,6 +119,7 @@ const ContactContentSection: React.FC<ContactContentSectionProps> = (props) => {
         .then(() => {
           firebaseDataLength()
           setContactDetails(null);
+          router.push("/");
           console.log('Object added to the database successfully');
         })
         .catch((error) => {
@@ -128,7 +130,7 @@ const ContactContentSection: React.FC<ContactContentSectionProps> = (props) => {
   }
 
   return (
-    <div className="">
+    <div className="relative">
       <div className="flex">
         <div className="bg-transparent w-[50%] hidden lg:block">
           <img src="assets/images/webp/contact_img.webp" alt="" className="w-[85%] h-full object-fill" />
@@ -390,7 +392,7 @@ const ContactContentSection: React.FC<ContactContentSectionProps> = (props) => {
                 }}
               />
             </div>
-            <div className="pt-4">
+            <div className="pt-4 mb-10 md:m-0">
               <TextField
                 label={<span className="text-black">Message*</span>}
                 variant="outlined"
@@ -423,11 +425,15 @@ const ContactContentSection: React.FC<ContactContentSectionProps> = (props) => {
                 }}
               />
             </div>
-            <div onClick={() => { addDataToFirebase() }} className={`cursor-pointer monsterrat-semibold px-6 py-4 rounded text-white ${buttonVal == true ? "bg-[#DE291B]" : "bg-gray-500"} bg-[#DE291B] text-base text-center w-1/2 md:w-3/12 mt-4`}>
+            <div onClick={() => { addDataToFirebase() }} className={`hidden md:block cursor-pointer monsterrat-semibold px-6 py-4 rounded text-white ${buttonVal == true ? "bg-[#DE291B]" : "bg-gray-500"} bg-[#DE291B] text-base text-center w-1/2 md:w-3/12 mt-4`}>
               Send message
             </div>
+
           </div>
         </div>
+      </div>
+      <div onClick={() => { addDataToFirebase() }} className={`md:hidden cursor-pointer monsterrat-semibold text-white text-base text-center py-4 fixed bottom-0 w-full z-50 ${buttonVal == true ? "bg-[#DE291B]" : "bg-gray-500"} bg-[#DE291B]`}>
+        Send message
       </div>
     </div>
   );

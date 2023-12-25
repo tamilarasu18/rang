@@ -46,11 +46,11 @@ const FooterSection: React.FC<FooterSectionProps> = (props) => {
                     <div className="monsterrat-regular">
                         <div className="flex justify-between items-start" onClick={() => { toggleFunction("product") }}>
                             <div className="monsterrat-semibold pb-4 text-lg md:text-2xl">Special Products</div>
-                            <div className="md:hidden">
-                                {
-                                    product ? <KeyboardControlKeyIcon fontSize="large" /> : <KeyboardArrowDownIcon fontSize="large" />
-                                }
-                            </div>
+                            {
+                                <div className="md:hidden">
+                                    {product ? <KeyboardControlKeyIcon fontSize="large" /> : <KeyboardArrowDownIcon fontSize="large" />}
+                                </div>
+                            }
                         </div>
                         <div className="md:hidden">
                             <Collapse in={product}>
@@ -105,11 +105,11 @@ const FooterSection: React.FC<FooterSectionProps> = (props) => {
                             <img className="object-fill w-1/4 lg:w-full h-full" src="assets/images/svg/linkedin.svg" alt="" />
                         </div>
                         <div className="">
-                        <div className="monsterrat-semibold py-4 text-sm md:text-2xl text-center lg:text-start">Contact Us</div>
-                        <div className="flex items-center">
-                            <EmailIcon fontSize="large"/>
-                            <div className="pl-4">rajeshkumarvadivel@gmail.com</div>
-                        </div>
+                            <div className="monsterrat-semibold py-4 text-sm md:text-2xl text-center lg:text-start">Contact Us</div>
+                            <div className="flex items-center">
+                                <EmailIcon fontSize="large" />
+                                <div className="pl-4">rajeshkumarvadivel@gmail.com</div>
+                            </div>
                         </div>
                     </div>
                 </div>

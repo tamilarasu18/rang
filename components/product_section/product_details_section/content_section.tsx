@@ -160,7 +160,7 @@ const ProductDetailsContentSection: React.FC<ProductDetailsContentSectionProps> 
             } else if (router.query.type == "kids") {
                 setSelectedProducts(kids);
                 setSelectedImage(kids[0])
-            }else if (router.query.type == "school") {
+            } else if (router.query.type == "school") {
                 setSelectedProducts(school);
                 setSelectedImage(school[0])
             }
@@ -176,21 +176,62 @@ const ProductDetailsContentSection: React.FC<ProductDetailsContentSectionProps> 
     return (
         <div className="my-12">
             <div className="custom-container">
-                <div className="flex">
-                    <div className="">
-                        {selectedImage && selectedImage.src && <div className="flex">
-                            <div className="">
-                                {selectedProducts.map((each, index) => {
-                                    return <div onClick={() => { onClickSelectedImage(each) }} key={index} className={`flex flex-row lg:flex-col w-20 h-24  mb-4 items-center justify-center rounded-md ${each.id == selectedImage.id ? "border-2 border-red-500" : ""}`}>
-                                        <img className="object-fill w-full h-full" src={each.src} alt="" />
-                                    </div>
-                                })}
-                            </div>
-                            <img className="object-fill w-[80%] mx-10" src={selectedImage.src} alt="" />
-                        </div>}
-                    </div>
+                <div className="hidden lg:block">
+                    <div className="flex">
+                        <div className="">
+                            {selectedImage && selectedImage.src && <div className="flex">
+                                <div className="">
+                                    {selectedProducts.map((each, index) => {
+                                        return <div onClick={() => { onClickSelectedImage(each) }} key={index} className={`flex flex-row lg:flex-col w-20 h-24  mb-4 items-center justify-center rounded-md ${each.id == selectedImage.id ? "border-2 border-red-500" : ""}`}>
+                                            <img className="object-fill w-full h-full" src={each.src} alt="" />
+                                        </div>
+                                    })}
+                                </div>
+                                <img className="object-fill w-[80%] mx-10" src={selectedImage.src} alt="" />
+                            </div>}
+                        </div>
 
-                    <div className="flex-1 text-black monsterrat-regular text-base">
+                        <div className="flex-1 text-black monsterrat-regular text-base">
+                            <div className="monsterrat-bold text-3xl mb-2">Round-Neck Tees</div>
+                            <div className="mb-1"><span className="monsterrat-semibold text-lg">Category:</span> Men’s clothings</div>
+                            <div className="mb-6"><span className="monsterrat-semibold text-lg">Tags:</span> Printed, Embroidered, Printed</div>
+                            <div className="mb-6">Embroidered, Printed, KSBNCkndszjb hvdvzdhvbkffg Jxdnvzkjvbndvn vkjzvnk kb n kn kn xxxv kjdxz vjzxv x Jmnzxcvjkzndkjvdnzkjnjk dk gkd jkgfgfhfgjhfgjnfhx nz nvbckjdznvjkdzbnv xflbnklfxmvlkjbnfxlkv bnlxfkb v jkxc kvbfjb lxfkjnblj LJgnSDKnfdnbfx blxdjknbvzc dd Vxkjvnkdxcbkxdnbjxfbnzdgvzdgbx hjhcbasbbbdcdc Dv zdvnbkjsdvnbsdkjbvkjdsbvsvdssdnnnjjccvddfdfg</div>
+                            <div className="mb-2"><CheckIcon sx={{ marginRight: "12px" }} /> Custom GSM</div>
+                            <div className="mb-2"><CheckIcon sx={{ marginRight: "12px" }} /> Custom fabric construction</div>
+                            <div className="mb-4"><CheckIcon sx={{ marginRight: "12px" }} /> Custom embroidery design, size & pattern</div>
+                            <div className="monsterrat-bold mb-4 flex items-center">
+                                <div className="mr-4"><img src="assets/images/svg/fabric_icon.svg" alt="" /> </div>
+                                <div className="">Fabric Varieties:</div>
+                            </div>
+                            <ul className="ml-4 list-disc">
+                                <li className="mb-2">{"100% Cotton"}</li>
+                                <li className="mb-2">{"Poly Cotton (60/40)"}</li>
+                                <li className="mb-2">{"Spun Poly"}</li>
+                                <li className="mb-2">{"Viscose"}</li>
+                                <li className="mb-2">{"Lycra Viscose"}</li>
+                                <li className="mb-2">{"Lycra Cotton"}</li>
+                                <li className="mb-2">{"Organic Cotton"}</li>
+                                <li className="mb-2">{"Viscose"}</li>
+                                <li className="mb-2">{"Special Treatment Process"}</li>
+                                <li className="mb-2">{"Acrylic Fabric"}</li>
+                                <li className="mb-2">{"Special Dyed Fabric"}</li>
+                                <li className="mb-2">{"All Kind Of Printed Fabrics"}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div className="lg:hidden">
+                    {selectedImage && selectedImage.src && <div className="">
+                        <img className="object-fill w-full" src={selectedImage.src} alt="" />
+                        <div className="">
+                            {selectedProducts.map((each, index) => {
+                                return <div onClick={() => { onClickSelectedImage(each) }} key={index} className={`flex w-20 h-24  mt-4 items-center justify-center rounded-md ${each.id == selectedImage.id ? "border-2 border-red-500" : ""}`}>
+                                    <img className="object-fill w-full h-full" src={each.src} alt="" />
+                                </div>
+                            })}
+                        </div>
+                    </div>}
+                    <div className="mt-4 text-black monsterrat-regular text-base">
                         <div className="monsterrat-bold text-3xl mb-2">Round-Neck Tees</div>
                         <div className="mb-1"><span className="monsterrat-semibold text-lg">Category:</span> Men’s clothings</div>
                         <div className="mb-6"><span className="monsterrat-semibold text-lg">Tags:</span> Printed, Embroidered, Printed</div>
@@ -198,7 +239,10 @@ const ProductDetailsContentSection: React.FC<ProductDetailsContentSectionProps> 
                         <div className="mb-2"><CheckIcon sx={{ marginRight: "12px" }} /> Custom GSM</div>
                         <div className="mb-2"><CheckIcon sx={{ marginRight: "12px" }} /> Custom fabric construction</div>
                         <div className="mb-4"><CheckIcon sx={{ marginRight: "12px" }} /> Custom embroidery design, size & pattern</div>
-                        <div className="monsterrat-bold mb-4">Fabric Varieties:</div>
+                        <div className="monsterrat-bold mb-4 flex items-center">
+                            <div className="mr-2"><img src="assets/images/svg/fabric_icon.svg" alt="" /> </div>
+                            <div className="">Fabric Varieties:</div>
+                        </div>
                         <ul className="ml-4 list-disc">
                             <li className="mb-2">{"100% Cotton"}</li>
                             <li className="mb-2">{"Poly Cotton (60/40)"}</li>
@@ -215,9 +259,8 @@ const ProductDetailsContentSection: React.FC<ProductDetailsContentSectionProps> 
                         </ul>
                     </div>
                 </div>
-
             </div>
-            {productList && productList.length &&<div className="">
+            {productList && productList.length && <div className="">
                 <ProductCard title={"Related Products"} productList={productList} />
             </div>}
         </div>

@@ -22,6 +22,12 @@ const OurProduct: React.FC<OurProductProps> = (props) => {
 
     return (
         <div className="">
+            <div className="hidden md:block mt-12">
+                <img src="assets/images/webp/offer_banner_lap.webp" alt="w-full h-full object-fill" />
+            </div>
+            <div className="md:hidden mt-8">
+                <img src="assets/images/webp/offer_banner_mobile.webp" alt="w-full h-full object-fill" />
+            </div>
             <div className="custom-container py-12 ">
                 <div className="flex pb-6">
                     <div className="flex-1 px-4">
