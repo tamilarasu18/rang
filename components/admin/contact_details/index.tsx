@@ -7,16 +7,48 @@ interface ContactDetailsProps {
     onBackClick: Function;
 }
 const ContactDetails: React.FC<ContactDetailsProps> = (props) => {
-    const { selectedData,onBackClick } = props;
+    const { selectedData, onBackClick } = props;
+
+    const getMonthAbbreviation = (month: number): string => {
+        const monthsAbbreviations = [
+            'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'
+        ];
+
+        return monthsAbbreviations[month];
+    };
+
+    function convertDate(date: string) {
+        const originalDate = new Date(date);
+
+        const day = originalDate.getDate().toString().padStart(2, '0');
+        const month = getMonthAbbreviation(originalDate.getMonth());
+        const year = originalDate.getFullYear();
+
+        const formattedDate = `${day} ${month} ${year}`;
+        return formattedDate;
+    }
+
+    function convertTime(time: string) {
+        const originalTime = '4:23:23 PM';
+
+        const timeComponents = originalTime.match(/(\d+):(\d+):(\d+) (AM|PM)/);
+        if (timeComponents) {
+        const [, hours, minutes, seconds, period] = timeComponents;
+        const formattedTime = `${String(hours).padStart(2, '0')}:${minutes}:${seconds} ${period}`;
+        return formattedTime;
+        }
+    }
+
+
     return (
         <div className="">
             <div className="flex p-6 items-start">
-                <div className="" onClick={()=>{onBackClick()}}>
-                <ArrowBackIosIcon fontSize='large' />
+                <div className="" onClick={() => { onBackClick() }}>
+                    <ArrowBackIosIcon fontSize='large' />
                 </div>
                 <div className="">
                     <div className="monsterrat-bold  text-3xl pb-2">{selectedData.name}</div>
-                    <div className="monsterrat-regular text-xs">20 JAN 2023 | 09:30 PM</div>
+                    <div className="monsterrat-regular text-xs">{convertDate(selectedData?.dateTime.split(',')[0])} | {convertTime(selectedData?.dateTime.split(',')[1])}</div>
                 </div>
             </div>
             <div className="bg-[#F1F3F5] monsterrat-bold py-2 pl-6">
@@ -56,6 +88,15 @@ const ContactDetails: React.FC<ContactDetailsProps> = (props) => {
             <div className="bg-black w-full h-[1px] opacity-50"></div>
             <div className="p-6">
                 <div className="monsterrat-medium text-lg pb-2">
+                    Type
+                </div>
+                <div className="monsterrat-regular text-sm">
+                    {selectedData.type}
+                </div>
+            </div>
+            <div className="bg-black w-full h-[1px] opacity-50"></div>
+            <div className="p-6">
+                <div className="monsterrat-medium text-lg pb-2">
                     Categorie
                 </div>
                 <div className="monsterrat-regular text-sm">
@@ -68,7 +109,7 @@ const ContactDetails: React.FC<ContactDetailsProps> = (props) => {
                     City & Country
                 </div>
                 <div className="monsterrat-regular text-sm">
-                    {selectedData.location}
+                    {selectedData.city}, {selectedData.country}
                 </div>
             </div>
             <div className="bg-black w-full h-[1px] opacity-50"></div>

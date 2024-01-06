@@ -114,13 +114,17 @@ const FooterSection: React.FC<FooterSectionProps> = (props) => {
                     </div>
                 </div>
                 <hr />
-                <div className="md:flex py-8 text-center justify-center items-center">
-                    <img src="assets/images/svg/footer_logo.svg" alt="" className="w-54 h-54 pr-12 mx-auto mb-4 md:m-0 object-fill" />
-                    <div className="monsterrat-regular text-xs w-full text-center flex ">
-                        <p className="mr-1">&copy;</p>
-                        2023 - 2025 Rang Clothing Company. All Rights Reserved.
+                <div className="md:flex py-8 text-center justify-center md:justify-between items-center">
+                    <div className="">
+                        <img src="assets/images/svg/footer_logo.svg" alt="" className="w-54 h-54 pr-12 mx-auto mb-4 md:m-0 object-fill" />
+                        <div className="monsterrat-regular text-xs w-full text-center flex ">
+                            <p className="mr-1">&copy;</p>
+                            2023 - 2025 Rang Clothing Company. All Rights Reserved.
+                        </div>
                     </div>
+                    <img className="object-fill w-[20%] md:w-[10%]  h-full mt-8 md:m-0 mx-auto " src="assets/images/svg/liffto_tech_logo.svg" alt="" />
                 </div>
+
             </div>
         </div>
     );

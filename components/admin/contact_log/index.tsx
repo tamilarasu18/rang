@@ -62,10 +62,14 @@ const ContactLog: React.FC<ContactLogProps> = (props) => {
             mobile: "Mobile No",
             email: "Email ID",
             catergorie: "Categorie",
+            type: "Type",
             country: "City & Country",
             message: "Message"
         }),
     ];
+
+    console.log("finalData",finalData);
+    
 
 
     return (
@@ -76,14 +80,14 @@ const ContactLog: React.FC<ContactLogProps> = (props) => {
             </div>
             {/* mobile view */}
             <div className="lg:hidden">
-                {finalData?.map((each, index) => {
+                {finalData && finalData?.map((each, index) => {
                     return <div key={index} onClick={() => { setData(each) }} className={`${index == 0 ? "" : "mb-8"}`}  >
                         {index != 0 ? <div className="text-black flex items-center justify-between px-4 py-2 rounded-md" style={{ boxShadow: "0px 0px 10px rgb(156,163,175,0.4)" }}>
                             <div className="">
-                                <div className="text-sm py-1">{each.name}</div>
-                                <div className="text-xs py-1">{each.catergorie}</div>
-                                <div className="text-xs opacity-60 py-1">{each.city} {each.country}</div>
-                                <div className="text-xs opacity-60 py-1">{each.mobile} | {each.email}</div>
+                                <div className="text-sm py-1">{each?.name}</div>
+                                <div className="text-xs py-1">{each?.catergorie}</div>
+                                <div className="text-xs opacity-60 py-1">{each?.city}, {each?.country}</div>
+                                <div className="text-xs opacity-60 py-1">{each?.mobile} | {each?.email}</div>
                             </div>
                             <ArrowForwardIosIcon />
                         </div> : <></>}
@@ -93,13 +97,13 @@ const ContactLog: React.FC<ContactLogProps> = (props) => {
             </div>
             <div className="hidden lg:block py-2" style={{ boxShadow: "0px 0px 10px rgb(156,163,175,0.4)" }}>
                 {finalData?.map((each, index) => {
-                    return <div key={index} onClick={() => { setData(each) }} className={`${index % 2 == 0 ? "bg-white" : "bg-[#F7F7F7]"} grid grid-cols-12 gap-2 text-center py-4`} >
-                        <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-1`}>{each.name}</div>
-                        <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-1`}>{each.mobile}</div>
-                        <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-2`}>{each.email}</div>
-                        <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-2`}>{each.catergorie}</div>
-                        <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-2`}>{each.city}{each.country}</div>
-                        <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-3 truncate w-full`}>{each.message}</div>
+                    return <div key={index} onClick={() => { setData(each) }} className={`${index % 2 == 0 ? "bg-white" : "bg-[#F7F7F7]"} grid grid-cols-12 gap-2 text-start py-4 px-4`} >
+                        <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-2`}>{each?.name}</div>
+                        <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-1`}>{each?.mobile}</div>
+                        <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-1`}>{each?.type}</div>
+                        <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-1`}>{each?.catergorie}</div>
+                        <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-2`}>{each?.city ? each?.city + "," : ""} {each?.country}</div>
+                        <div className={`${index == 0 ? "text-base monsterrat-semibold" : "text-sm monsterrat-regular opacity-60"} col-span-4 truncate w-full`}>{each?.message}</div>
                         <div className={`col-span-1`}>{index != 0 ? <KeyboardArrowRightIcon /> : <></>}</div>
                     </div>
                 })}

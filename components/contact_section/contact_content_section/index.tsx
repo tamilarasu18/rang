@@ -108,6 +108,8 @@ const ContactContentSection: React.FC<ContactContentSectionProps> = (props) => {
 
   const addDataToFirebase = () => {
     contactDetails.id = generateUniqueId(5);
+    const currentDate = new Date();
+    contactDetails.dateTime = currentDate.toLocaleString();
     if (buttonVal == true) {
       const firebaseData = firebaseDatabase.ref('data/contactLog');
       const newNumericIndex = firebaseCount;
