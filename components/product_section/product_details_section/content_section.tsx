@@ -195,7 +195,7 @@ const ProductDetailsContentSection: React.FC<ProductDetailsContentSectionProps> 
                             <div className="monsterrat-bold text-3xl mb-2">Round-Neck Tees</div>
                             <div className="mb-1"><span className="monsterrat-semibold text-lg">Category:</span> Men’s clothings</div>
                             <div className="mb-6"><span className="monsterrat-semibold text-lg">Tags:</span> Printed, Embroidered, Printed</div>
-                            <div className="mb-6">Embroidered, Printed, KSBNCkndszjb hvdvzdhvbkffg Jxdnvzkjvbndvn vkjzvnk kb n kn kn xxxv kjdxz vjzxv x Jmnzxcvjkzndkjvdnzkjnjk dk gkd jkgfgfhfgjhfgjnfhx nz nvbckjdznvjkdzbnv xflbnklfxmvlkjbnfxlkv bnlxfkb v jkxc kvbfjb lxfkjnblj LJgnSDKnfdnbfx blxdjknbvzc dd Vxkjvnkdxcbkxdnbjxfbnzdgvzdgbx hjhcbasbbbdcdc Dv zdvnbkjsdvnbsdkjbvkjdsbvsvdssdnnnjjccvddfdfg</div>
+                            <div className="mb-6">Embroidered, Printed, KSBNCkndszjb hvdvzdhvbkffg Jxdnvzkjvbndvn vkjzvnk kb n kn kn xxxv kjdxz vjzxv x Jmnzxcvjkzndkjvdnzkjnjk dk gkd jkgfgfhfgjhfgjnfhx nz nvbckjdznvjkdzbnv xflbnklfxmvlkjbnfxlkv bnlxfkb v jkxc kvbfjb lxfkjnblj LJgnSDKnfdnbfx blxdjknbvzc dd Vxkjvnkdxcbkxdnbjxfbnzdgvzdgbx hjhcbasbbbdcdc Dv zdvnbkjs</div>
                             <div className="mb-2"><CheckIcon sx={{ marginRight: "12px" }} /> Custom GSM</div>
                             <div className="mb-2"><CheckIcon sx={{ marginRight: "12px" }} /> Custom fabric construction</div>
                             <div className="mb-4"><CheckIcon sx={{ marginRight: "12px" }} /> Custom embroidery design, size & pattern</div>
@@ -235,7 +235,7 @@ const ProductDetailsContentSection: React.FC<ProductDetailsContentSectionProps> 
                         <div className="monsterrat-bold text-3xl mb-2">Round-Neck Tees</div>
                         <div className="mb-1"><span className="monsterrat-semibold text-lg">Category:</span> Men’s clothings</div>
                         <div className="mb-6"><span className="monsterrat-semibold text-lg">Tags:</span> Printed, Embroidered, Printed</div>
-                        <div className="mb-6">Embroidered, Printed, KSBNCkndszjb hvdvzdhvbkffg Jxdnvzkjvbndvn vkjzvnk kb n kn kn xxxv kjdxz vjzxv x Jmnzxcvjkzndkjvdnzkjnjk dk gkd jkgfgfhfgjhfgjnfhx nz nvbckjdznvjkdzbnv xflbnklfxmvlkjbnfxlkv bnlxfkb v jkxc kvbfjb lxfkjnblj LJgnSDKnfdnbfx blxdjknbvzc dd Vxkjvnkdxcbkxdnbjxfbnzdgvzdgbx hjhcbasbbbdcdc Dv zdvnbkjsdvnbsdkjbvkjdsbvsvdssdnnnjjccvddfdfg</div>
+                        <div className="mb-6">Embroidered, Printed, KSBNCkndszjb hvdvzdhvbkffg Jxdnvzkjvbndvn vkjzvnk kb n kn kn xxxv kjdxz vjzxv x Jmnzxcvjkzndkjvdnzkjnjk dk gkd jkgfgfhfgjhfgjnfhx nz nvbckjdznvjkdzbnv xflbnklfxmvlkjbnfxlkv bnlxfkb v jkxc kvbfjb lxfkjnblj LJgnSDKnfdnbfx blxdjknbvzc dd Vxkjvnkdxcbkxdnbjxfbnzdgvzdgbx hjhcbasbbbdcdc Dv zdvnb</div>
                         <div className="mb-2"><CheckIcon sx={{ marginRight: "12px" }} /> Custom GSM</div>
                         <div className="mb-2"><CheckIcon sx={{ marginRight: "12px" }} /> Custom fabric construction</div>
                         <div className="mb-4"><CheckIcon sx={{ marginRight: "12px" }} /> Custom embroidery design, size & pattern</div>
